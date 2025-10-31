@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Git: quick commit & push",
+      "type": "shell",
+      "command": "git",
+      "args": [
+        "add", ".",
+        ";",
+        "git", "commit", "-m", "${input:commitMsg}",
+        ";",
+        "git", "push"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": {
+          "executable": "powershell.exe",
+          "args": ["-Command"]
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "commitMsg",
+      "type": "promptString",
+      "description": "Commit message:",
+      "default": "update"
+    }
+  ]
+}
+

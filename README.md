@@ -6,7 +6,7 @@ Each folder = one lesson/day. Goal: consistency, clarity, progression.
 ## Structure
 
 ## Daily Rules
-- ⏱️ **1+ commit per day** (small wins count)
+- ⏱️ **1+ commit every other, other, other day** (small wins count)
 - 🧩 Each lesson gets its **own folder**
 - 📝 Commit messages: `feat:`, `chore:`, `docs:`, `fix:`
 - 📌 Keep code runnable with `node <file>.js`
