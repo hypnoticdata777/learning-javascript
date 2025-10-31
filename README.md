@@ -3,6 +3,11 @@
 Daily JavaScript learning journey (fundamentals → mastery).  
 Each folder = one lesson/day. Goal: consistency, clarity, progression.
 
+![GitHub last commit](https://img.shields.io/github/last-commit/hypnoticdata777/learning-javascript?color=brightgreen)
+![GitHub repo size](https://img.shields.io/github/repo-size/hypnoticdata777/learning-javascript?color=blue)
+![GitHub stars](https://img.shields.io/github/stars/hypnoticdata777/learning-javascript?style=social)
+
+
 ## Structure
 
 ## Daily Rules
@@ -11,12 +16,12 @@ Each folder = one lesson/day. Goal: consistency, clarity, progression.
 - 📝 Commit messages: `feat:`, `chore:`, `docs:`, `fix:`
 - 📌 Keep code runnable with `node <file>.js`
 
-## Progress
-- **Day 01:** Hello World
-- **Day 02:** Variables (let/const, types)
-- **Day 03:** Functions (params, return)
-- **Day 04:** Conditionals (if/else, switch)
-- **Day 05:** Loops (for, while, for...of)
+## 📅 Day Counter
+| Day | Date | Focus | Status |
+|-----|------|--------|--------|
+| 1 | Oct 30, 2025 | JS Console Logs + VS Code Setup | ✅ Completed |
+
+
 
 ## How to run
 ```bash
@@ -26,7 +31,4 @@ node index.js
 ## 🔑 Keyboard Shortcuts
 See [shortcuts.md](./shortcuts.md) for my setup.
 
-## 🗓️ Daily Progress Log
-| Date | Progress | Commit ID |
-|------|-----------|------------|
-| Oct 30, 2025 | Printed Carlos/32/student + setup shortcuts | 59d534b |
+

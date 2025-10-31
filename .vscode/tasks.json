@@ -24,6 +24,22 @@
         "panel": "shared"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "Git: sync (pull --rebase + push)",
+      "type": "shell",
+      "command": "git",
+      "args": [
+        "pull", "--rebase", "origin", "main",
+        ";",
+        "git", "push"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": { "executable": "powershell.exe", "args": ["-Command"] }
+      },
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
     }
   ],
   "inputs": [
