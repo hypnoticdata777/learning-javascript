@@ -22,3 +22,11 @@ Each folder = one lesson/day. Goal: consistency, clarity, progression.
 ```bash
 cd 01-hello-world
 node index.js
+
+## 🔑 Keyboard Shortcuts
+See [shortcuts.md](./shortcuts.md) for my setup.
+
+## 🗓️ Daily Progress Log
+| Date | Progress | Commit ID |
+|------|-----------|------------|
+| Oct 30, 2025 | Printed Carlos/32/student + setup shortcuts | 59d534b |
