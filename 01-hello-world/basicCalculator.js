@@ -29,4 +29,20 @@ switch (operator) {
                     result = "Invalid operator!";
                 }
 console.log ('Result: ${result}');
+function calculate(a, b, op) {
+    switch (op) {
+        case "+":
+            return a + b;
+            case"-":
+            return a - b;
+            case "*":
+            return a * b;
+            case "/":
+                return b !== 0 ? a / b : "Cannot divide by zero!";
+                default:
+                    return " Invalid operator!";
 
+    }
+}
+
+console.log("Function Result:", calculate(15, 3, "*"));
