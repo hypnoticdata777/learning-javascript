@@ -46,3 +46,12 @@ function calculate(a, b, op) {
 }
 
 console.log("Function Result:", calculate(15, 3, "*"));
+
+const prompt = require("prompt-sync")({ sigint: true});
+
+const n1 = parseFloat(prompt("Enter first number: "));
+const n2 = parseFloat(prompt("Enter second number: "));
+const op = prompt("Enter operator (+, -, *, /): ");
+
+console.log('/n Calculating: &{n1} ${op} ${n2}');
+console.log("REsult:", calculate(n1, n2, op));
