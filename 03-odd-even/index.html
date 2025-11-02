@@ -1,31 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title> Odd / Even Checker</title>
-        <style>
-            body {font-family: system-ui, sans-serif; display: flex; justify-content: center; margin-top: 4rem; }
-            .card { border: 1px solid #ddd; border-radius: 12px; padding: 1.5rem; max-width: 400px; width: 100%;}
-            h1 { margin-top: 0; }
-            input, button {padding: .6rem; font-size: 1rem;}
-            .row { display: flex; gap: .5rem; }
-            #result { margin-top: 1rem; font-weight: 600; }
-            .ok { color: #066a2b; }
-            .error { color: #b00020; }
-        </style>
-    </head>
-    <body>
-        <div class="card">
-            <h1> Odd / Even Checker</h1>
-            <p> Enter a number below</p>
-            <div class="row">
-                <input id="numberInput" placeholder="e.g. -3 or 10"/>
-                <button id="checkBtn">Check</button>
-            </div>
-             <div id="result"></div>
-        </div>
-          <script src="script.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Odd / Even Checker</title>
 
-    </body>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      background: #fafafa;
+      margin: 0;
+      padding-top: 3rem;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 400px;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    input {
+      flex: 1;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      background: #f3f3f3;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #e9e9e9;
+    }
+    .muted {
+      color: #666;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    #result {
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 600;
+    }
+    .ok { color: #066a2b; }
+    .error { color: #b00020; }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Odd / Even Checker</h1>
+    <p>Enter a number below:</p>
+
+    <div class="row">
+      <input id="numberInput" placeholder="e.g. -3 or 10" />
+      <button id="checkBtn">Check</button>
+      <button id="clearBtn" type="button">Clear</button>
+    </div>
+
+    <p class="muted">Tip: You can also enter a range like -3..3</p>
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
