@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title> Odd / Even Checker</title>
+        <style>
+            body {font-family: system-ui, sans-serif; display: flex; justify-content: center; margin-top: 4rem; }
+            .card { border: 1px solid #ddd; border-radius: 12px; padding: 1.5rem; max-width: 400px; width: 100%;}
+            h1 { margin-top: 0; }
+            input, button {padding: .6rem; font-size: 1rem;}
+            .row { display: flex; gap: .5rem; }
+            #result { margin-top: 1rem; font-weight: 600; }
+            .ok { color: #066a2b; }
+            .error { color: #b00020; }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h1> Odd / Even Checker</h1>
+            <p> Enter a number below</p>
+            <div class="row">
+                <input id="numberInput" placeholder="e.g. -3 or 10"/>
+                <button id="checkBtn">Check</button>
+            </div>
+             <div id="result"></div>
+        </div>
+          <script src="script.js"></script>
+
+    </body>
+</html>
