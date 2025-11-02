@@ -71,3 +71,8 @@ Functions & Parameters
 Spread Operator (...)
 
 Console logging formatted output
+
+## 🧮 Project 02 – Basic Calculator (Level 1: Core Fundamentals)
+**Concepts practiced:** Variables, conditionals, switch statements, functions, user input, npm modules.  
+**Date:** Nov 1, 2025  
+**Status:** ✅ Completed  
