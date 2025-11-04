@@ -1,7 +1,7 @@
-# learning-javascript
+# 🧠 learning-javascript
 
 Daily JavaScript learning journey (fundamentals → mastery).  
-Each folder = one lesson/day. Goal: consistency, clarity, progression.
+Each folder = one focused project/day. Goal: **consistency, clarity, progression**.
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/hypnoticdata777/learning-javascript?color=brightgreen)
 ![GitHub repo size](https://img.shields.io/github/repo-size/hypnoticdata777/learning-javascript?color=blue)
@@ -11,68 +11,89 @@ Each folder = one lesson/day. Goal: consistency, clarity, progression.
 
 ## ⚙️ Structure
 
-Each day’s folder contains:
-- A single `index.js` file for that day’s practice
-- Optional notes, images, or challenges related to the topic
+Each project folder contains:
+- A single `index.js` or `app.js` file  
+- Optional HTML/CSS if UI-based  
+- Step-by-step commits showing concept mastery  
 
----
+## 📅 Progress Log
 
-## 🧭 Daily Rules
-- ⏱️ **1+ commit every other, other, other day** (small wins count)
-- 🧩 Each lesson gets its **own folder**
-- 📝 Commit messages follow: `feat:`, `chore:`, `docs:`, `fix:`
-- 📌 Keep all code runnable with `node <file>.js`
-
----
-
-## 📅 Day Counter
-| Day | Date | Focus | Status |
-|-----|------|--------|--------|
-| 1 | Oct 30, 2025 | JS Console Logs + VS Code Setup | ✅ Completed |
-| 2 | Oct 31, 2025 | Budget Tracker Mini | ✅ Completed |
+| # | Date | Project / Focus | Core Concepts | Status |
+|---|------|------------------|----------------|---------|
+| 1 | Oct 30, 2025 | **Console Logs + VS Code Setup** | Node basics, console output, keyboard shortcuts | ✅ Completed |
+| 2 | Nov 1, 2025 | **Basic Calculator** | Variables, conditionals, switch statements, modular functions | ✅ Completed |
+| 3 | Nov 2, 2025 | **Odd/Even Checker (UI Integration)** | Conditionals, validation, modularization, DOM manipulation | ✅ Completed |
+| 4 | Nov 3, 2025 | **Temperature Converter** | Event-driven programming, validation, UX feedback, DOM updates | ✅ Completed |
 
 ---
 
 ## ▶️ How to Run
+
 ```bash
-cd 01-hello-world
+# Run console-based apps
+cd 02-basic-calculator
 node index.js
 
-⌨️ Keyboard Shortcuts
+# Run browser-based apps
+cd 04-temperature-converter
+start index.html  # or open manually
 
-See shortcuts.md
- for my VS Code setup.
 
-🧠 Exercise #2 – Budget Tracker Mini
+ Projects Summary
+ Project 02 – Basic Calculator
 
-Date: October 31, 2025
-File: index.js
+Date: Nov 1, 2025
+Concepts: Variables, conditionals, switch statements, modular functions.
+Highlights:
 
-🧩 Description
+Core logic fully modularized.
 
-A simple console-based budget tracker that:
+Clean console interface with user input simulation.
 
-Stores and displays a list of expenses
+Reflection:
 
-Lets you add new ones dynamically
+I learned how to design a system of reusable logic blocks. Each calculation branch acts as a separate module, just like functions in larger applications.
 
-Calculates total spent
+ Project 03 – Odd/Even Checker (UI Edition)
 
-Shows the highest and lowest expense
+Date: Nov 2, 2025
+Concepts: Conditionals, modular thinking, DOM logic, validation.
+Highlights:
 
-🧠 Concepts Practiced
+Console logic evolved into a browser UI app.
 
-Arrays & Objects
+Added instant feedback, reset button, and input guards.
 
-Loops (for...of)
+Introduced CSS for a clean visual layer.
 
-Functions & Parameters
+ Reflection:
 
-Spread Operator (...)
+Translating code to UI taught me how JavaScript interacts with the DOM — every action can trigger logic, giving programs “life” through user events.
 
-Console logging formatted output
+ Project 04 – Temperature Converter
 
-## 🧮 Project 02 – Basic Calculator (Level 1: Core Fundamentals)
-**Concepts practiced:** Variables, conditionals, switch statements, functions, user input, npm modules.  
-**Date:** Nov 1, 2025  
-**Status:** ✅ Completed  
+Date: Nov 3, 2025
+Concepts: Bi-directional syncing, event listeners, validation, UX polish.
+Highlights:
+
+Real-time two-way updates across Celsius, Fahrenheit, Kelvin.
+
+Absolute-zero validation + aria-live user messages.
+
+Enter/Esc keyboard shortcuts and auto-focus select.
+
+Reflection:
+
+This project showed how small details like keyboard shortcuts and validation transform a script into a real user experience.
+
+ Skills Reinforced
+
+DOM manipulation & reactive events
+
+Input validation & modular design
+
+Real-time data synchronization
+
+UI polish & user feedback design
+
+Consistent commit discipline & semantic logging
