@@ -128,7 +128,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     input.addEventListener("focus", e => setTimeout(() => e.target.select(), 0));
   });
-
+//this ensures that when you click or tab into a field, its text highlights instantly, ready for replacement
   if ($clear) {
     $clear.addEventListener("click", () => {
       $c.value = ""; $f.value = ""; $k.value = "";
