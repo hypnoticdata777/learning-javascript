@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Temperature Converter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Temperature Converter</h1>
+
+    <form id="converter" autocomplete="off" novalidate>
+      <div class="row">
+        <label for="celsius">Celsius (°C)</label>
+        <input id="celsius" name="celsius" type="text" inputmode="decimal" placeholder="e.g. 25" />
+      </div>
+
+      <div class="row">
+        <label for="fahrenheit">Fahrenheit (°F)</label>
+        <input id="fahrenheit" name="fahrenheit" type="text" inputmode="decimal" placeholder="e.g. 77" />
+      </div>
+
+      <div class="row">
+        <label for="kelvin">Kelvin (K)</label>
+        <input id="kelvin" name="kelvin" type="text" inputmode="decimal" placeholder="e.g. 298.15" />
+      </div>
+
+      <div class="actions">
+        <button type="button" id="clearBtn">Clear</button>
+      </div>
+
+      <p id="message" class="message" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
