@@ -120,3 +120,51 @@ button:active {
         width: 100%;
     }
 }
+.multiplication-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.multiplication-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.multiplication-table th {
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.multiplication-table tbody tr {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.multiplication-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.multiplication-table tbody tr:hover {
+    background-color: #e7e9fc;
+    transform: scale(1.02);
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+}
+
+.multiplication-table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.multiplication-table td.result {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 1.2rem;
+}
