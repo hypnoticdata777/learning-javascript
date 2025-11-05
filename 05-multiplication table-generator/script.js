@@ -28,6 +28,20 @@ function generateMultiplicationTable(number, range) {
     return tableHTML;
 }
 
+function validateInputs(number, range) {
+    if (isNaN(number) || number < 1 || number > 20) {
+        alert('Please enter a number between 1 and 20');
+        return false;
+    }
+    
+    if (isNaN(range) || range < 1 || range > 20) {
+        alert('Please enter a range between 1 and 20');
+        return false;
+    }
+    
+    return true;
+}
+
 function displayTable() {
     const numberInput = document.getElementById('numberInput');
     const rangeInput = document.getElementById('rangeInput');
@@ -36,10 +50,27 @@ function displayTable() {
     const number = parseInt(numberInput.value);
     const range = parseInt(rangeInput.value);
     
+    if (!validateInputs(number, range)) {
+        return;
+    }
+    
     const tableHTML = generateMultiplicationTable(number, range);
     tableContainer.innerHTML = tableHTML;
 }
 
 document.getElementById('generateBtn').addEventListener('click', displayTable);
 
+document.getElementById('numberInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        displayTable();
+    }
+});
+
+document.getElementById('rangeInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        displayTable();
+    }
+});
+
 displayTable();
+
