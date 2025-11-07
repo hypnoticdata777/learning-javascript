@@ -9,14 +9,14 @@ Each folder = one focused project/day. Goal: **consistency, clarity, progression
 
 ---
 
-## ⚙️ Structure
+## Structure
 
 Each project folder contains:
 - A single `index.js` or `app.js` file  
 - Optional HTML/CSS if UI-based  
 - Step-by-step commits showing concept mastery  
 
-## 📅 Progress Log
+## Progress Log
 
 | # | Date | Project / Focus | Core Concepts | Status |
 |---|------|------------------|----------------|---------|
@@ -25,10 +25,11 @@ Each project folder contains:
 | 3 | Nov 2, 2025 | **Odd/Even Checker (UI Integration)** | Conditionals, validation, modularization, DOM manipulation | ✅ Completed |
 | 4 | Nov 3, 2025 | **Temperature Converter** | Event-driven programming, validation, UX feedback, DOM updates | ✅ Completed |
 | 5 | Nov 4, 2025 | **Multiplication Table Generator** | Loops, dynamic HTML generation, table rendering, input validation | ✅ Completed |
+| 6 | Nov 5, 2025 | **Smart To-Do List** | Arrays, objects, loops, filtering, event delegation, state management | ✅ Completed |
 
 ---
 
-## ▶️ How to Run
+##  How to Run
 ```bash
 # Run console-based apps
 cd 02-basic-calculator
@@ -41,9 +42,9 @@ start index.html  # or open manually
 
 ---
 
-## 📚 Projects Summary
+## Projects Summary
 
-### 🧮 Project 02 – Basic Calculator
+### Project 02 – Basic Calculator
 
 **Date:** Nov 1, 2025  
 **Concepts:** Variables, conditionals, switch statements, modular functions.  
@@ -56,7 +57,7 @@ I learned how to design a system of reusable logic blocks. Each calculation bran
 
 ---
 
-### 🔢 Project 03 – Odd/Even Checker (UI Edition)
+### Project 03 – Odd/Even Checker (UI Edition)
 
 **Date:** Nov 2, 2025  
 **Concepts:** Conditionals, modular thinking, DOM logic, validation.  
@@ -70,7 +71,7 @@ Translating code to UI taught me how JavaScript interacts with the DOM — every
 
 ---
 
-### 🌡️ Project 04 – Temperature Converter
+### Project 04 – Temperature Converter
 
 **Date:** Nov 3, 2025  
 **Concepts:** Bi-directional syncing, event listeners, validation, UX polish.  
@@ -84,7 +85,7 @@ This project showed how small details like keyboard shortcuts and validation tra
 
 ---
 
-### ✖️ Project 05 – Multiplication Table Generator
+### Project 05 – Multiplication Table Generator
 
 **Date:** Nov 4, 2025  
 **Concepts:** Loops, dynamic HTML generation, table rendering, input validation.  
@@ -99,13 +100,33 @@ This project deepened my understanding of loops and dynamic content generation. 
 
 ---
 
-## 💡 Skills Reinforced
+### Project 06 – Smart To-Do List
+
+**Date:** Nov 5, 2025  
+**Concepts:** Arrays, objects, loops, filtering, event delegation, state management.  
+**Highlights:**
+- Task storage using an array of objects with unique IDs.
+- Dynamic rendering with for loops iterating through filtered data.
+- Toggle complete and delete functionality using event delegation.
+- Filter system (All/Active/Completed) with live task counter.
+- Smooth slide-in animations and hover effects.
+
+**Reflection:**  
+This project leveled up my understanding of data structures. Working with arrays of objects showed me how real applications organize information. The filter methods taught me how to transform data on the fly, and event delegation revealed how to handle clicks on elements that don't exist yet. This is where JavaScript starts feeling like a real tool for building apps, not just running scripts.
+
+---
+
+## Skills Reinforced
 
 - DOM manipulation & reactive events
 - Input validation & modular design
 - Real-time data synchronization
 - UI polish & user feedback design
 - Consistent commit discipline & semantic logging
-- **Loop iteration & dynamic content generation**
-- **Table structures & semantic HTML**
-- **CSS animations & state transitions**
+- Loop iteration & dynamic content generation
+- Table structures & semantic HTML
+- CSS animations & state transitions
+- **Array manipulation & data filtering**
+- **Object-oriented thinking with task objects**
+- **Event delegation patterns**
+- **State management fundamentals**
