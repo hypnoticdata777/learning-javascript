@@ -41,6 +41,20 @@ function deleteTask(taskId) {
     updateTaskCounter();
 }
 
+function setFilter(filter) {
+    currentFilter = filter;
+    
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    for (let i = 0; i < filterBtns.length; i++) {
+        filterBtns[i].classList.remove('active');
+    }
+    
+    const activeBtn = document.querySelector(`[data-filter="${filter}"]`);
+    activeBtn.classList.add('active');
+    
+    renderTasks();
+}
+
 function renderTasks() {
     const taskList = document.getElementById('taskList');
     const emptyState = document.getElementById('emptyState');
@@ -122,3 +136,11 @@ document.getElementById('taskList').addEventListener('click', function(event) {
         deleteTask(taskId);
     }
 });
+
+const filterBtns = document.querySelectorAll('.filter-btn');
+for (let i = 0; i < filterBtns.length; i++) {
+    filterBtns[i].addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        setFilter(filter);
+    });
+}
