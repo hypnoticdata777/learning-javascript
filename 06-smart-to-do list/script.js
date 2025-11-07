@@ -24,6 +24,23 @@ function addTask() {
     updateTaskCounter();
 }
 
+function toggleTask(taskId) {
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].id === taskId) {
+            tasks[i].completed = !tasks[i].completed;
+            break;
+        }
+    }
+    renderTasks();
+    updateTaskCounter();
+}
+
+function deleteTask(taskId) {
+    tasks = tasks.filter(task => task.id !== taskId);
+    renderTasks();
+    updateTaskCounter();
+}
+
 function renderTasks() {
     const taskList = document.getElementById('taskList');
     const emptyState = document.getElementById('emptyState');
@@ -44,6 +61,7 @@ function renderTasks() {
         
         const li = document.createElement('li');
         li.className = 'task-item';
+        li.dataset.taskId = task.id;
         if (task.completed) {
             li.classList.add('completed');
         }
@@ -89,5 +107,18 @@ document.getElementById('addBtn').addEventListener('click', addTask);
 document.getElementById('taskInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         addTask();
+    }
+});
+
+document.getElementById('taskList').addEventListener('click', function(event) {
+    const taskItem = event.target.closest('.task-item');
+    if (!taskItem) return;
+    
+    const taskId = parseInt(taskItem.dataset.taskId);
+    
+    if (event.target.classList.contains('task-checkbox')) {
+        toggleTask(taskId);
+    } else if (event.target.classList.contains('delete-btn')) {
+        deleteTask(taskId);
     }
 });
