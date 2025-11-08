@@ -26,6 +26,7 @@ Each project folder contains:
 | 4 | Nov 3, 2025 | **Temperature Converter** | Event-driven programming, validation, UX feedback, DOM updates | ✅ Completed |
 | 5 | Nov 4, 2025 | **Multiplication Table Generator** | Loops, dynamic HTML generation, table rendering, input validation | ✅ Completed |
 | 6 | Nov 5, 2025 | **Smart To-Do List** | Arrays, objects, loops, filtering, event delegation, state management | ✅ Completed |
+| 7 | Nov 7, 2025 | **Random Quote Generator** | Arrays of objects, Math.random(), do-while loops, animations, duplicate prevention | ✅ Completed |
 
 ---
 
@@ -116,6 +117,22 @@ This project leveled up my understanding of data structures. Working with arrays
 
 ---
 
+### Project 07 – Random Quote Generator
+
+**Date:** Nov 7, 2025  
+**Concepts:** Arrays of objects, Math.random(), do-while loops, CSS animations, duplicate prevention.  
+**Highlights:**
+- Array of 12 inspirational quotes stored as objects with text and author properties.
+- Random selection using Math.random() and Math.floor() for array indexing.
+- Smart duplicate prevention using do-while loop to avoid consecutive repeats.
+- Smooth fade-in animations triggered on each quote change.
+- Auto-load random quote on page initialization.
+
+**Reflection:**  
+This project solidified my understanding of working with arrays and randomization. The do-while loop for preventing duplicates taught me how to add intelligent constraints to random behavior. Combining JavaScript class manipulation with CSS animations showed me how to create smooth, polished UI transitions. Most importantly, this reinforced that good UX isn't just about functionality—it's about the small details like not showing the same quote twice in a row.
+
+---
+
 ## Skills Reinforced
 
 - DOM manipulation & reactive events
@@ -130,3 +147,6 @@ This project leveled up my understanding of data structures. Working with arrays
 - **Object-oriented thinking with task objects**
 - **Event delegation patterns**
 - **State management fundamentals**
+- **Random number generation & array indexing**
+- **Duplicate prevention logic**
+- **CSS animations triggered via JavaScript**
