@@ -50,6 +50,26 @@ const quotes = [
     {
         text: "Don't watch the clock; do what it does. Keep going.",
         author: "Sam Levenson"
+    },
+    {
+        text: "The future belongs to those who believe in the beauty of their dreams.",
+        author: "Eleanor Roosevelt"
+    },
+    {
+        text: "It does not matter how slowly you go as long as you do not stop.",
+        author: "Confucius"
+    },
+    {
+        text: "Everything you've ever wanted is on the other side of fear.",
+        author: "George Addair"
+    },
+    {
+        text: "Believe you can and you're halfway there.",
+        author: "Theodore Roosevelt"
+    },
+    {
+        text: "The only limit to our realization of tomorrow is our doubts of today.",
+        author: "Franklin D. Roosevelt"
     }
 ];
 
@@ -57,6 +77,8 @@ const quotes = [
 const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
 const newQuoteBtn = document.getElementById('new-quote');
+const copyQuoteBtn = document.getElementById('copy-quote');
+const quoteCounter = document.getElementById('quote-counter');
 
 console.log('Quote Generator initialized!');
 console.log(`Loaded ${quotes.length} quotes`);
@@ -104,6 +126,9 @@ function displayQuote() {
     quoteText.textContent = `"${quote.text}"`;
     authorText.textContent = `- ${quote.author}`;
     
+    // Update quote counter
+    quoteCounter.textContent = `Quote ${lastQuoteIndex + 1} of ${quotes.length}`;
+    
     // Add fade-in animation
     quoteContent.classList.add('fade-in');
     
@@ -112,6 +137,45 @@ function displayQuote() {
 
 // Event listener for the button
 newQuoteBtn.addEventListener('click', displayQuote);
+
+// Copy to clipboard functionality
+copyQuoteBtn.addEventListener('click', () => {
+    // Get current quote text without the quotation marks
+    const currentQuote = quoteText.textContent.slice(1, -1); // Remove first and last char (quotes)
+    const currentAuthor = authorText.textContent;
+    const fullQuote = `${currentQuote} ${currentAuthor}`;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(fullQuote).then(() => {
+        // Visual feedback
+        copyQuoteBtn.textContent = '✓ Copied!';
+        copyQuoteBtn.classList.add('copied');
+        
+        // Reset button after 2 seconds
+        setTimeout(() => {
+            copyQuoteBtn.textContent = '📋 Copy';
+            copyQuoteBtn.classList.remove('copied');
+        }, 2000);
+        
+        console.log('Quote copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+        copyQuoteBtn.textContent = '❌ Failed';
+        setTimeout(() => {
+            copyQuoteBtn.textContent = '📋 Copy';
+        }, 2000);
+    });
+});
+
+// Keyboard shortcut - Spacebar to generate new quote
+document.addEventListener('keydown', (e) => {
+    // Only trigger if spacebar is pressed and we're not typing in an input
+    if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault(); // Prevent page scroll
+        displayQuote();
+        console.log('Quote generated via spacebar!');
+    }
+});
 
 // Display a random quote on page load
 displayQuote();
