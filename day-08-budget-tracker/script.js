@@ -91,3 +91,34 @@ function displayIncome() {
     
     console.log(`Displayed ${income.length} income items`);
 }
+// Function to calculate total expenses using loops
+function calculateTotalExpenses() {
+    let total = 0;
+    
+    // Loop to sum all expenses
+    for (let i = 0; i < expenses.length; i++) {
+        total += expenses[i].amount;
+    }
+    
+    return total;
+}
+
+// Function to calculate total income using loops
+function calculateTotalIncome() {
+    let total = 0;
+    
+    // Loop to sum all income
+    for (let i = 0; i < income.length; i++) {
+        total += income[i].amount;
+    }
+    
+    return total;
+}
+
+// Function to calculate balance (income - expenses)
+function calculateBalance() {
+    const totalIncome = calculateTotalIncome();
+    const totalExpenses = calculateTotalExpenses();
+    
+    return totalIncome - totalExpenses;
+}
