@@ -264,3 +264,32 @@ function deleteIncome(index) {
         console.log('Income deleted at index:', index);
     }
 }
+// Update the UI with totals
+function updateUI() {
+    const totalExpenses = calculateTotalExpenses();
+    const totalIncome = calculateTotalIncome();
+    const balance = calculateBalance();
+    
+    // Update displays
+    document.getElementById('total-expenses').textContent = `$${totalExpenses.toFixed(2)}`;
+    document.getElementById('total-income').textContent = `$${totalIncome.toFixed(2)}`;
+    document.getElementById('balance').textContent = `$${balance.toFixed(2)}`;
+    
+    // Change balance color based on positive/negative
+    const balanceElement = document.getElementById('balance');
+    if (balance >= 0) {
+        balanceElement.style.color = '#fff';
+    } else {
+        balanceElement.style.color = '#ff6b6b';
+    }
+    
+    // Populate filter dropdown
+    populateExpenseFilter();
+    
+    // Display all transactions
+    displayExpenses();
+    displayIncome();
+}
+
+// Initialize on page load
+updateUI();
