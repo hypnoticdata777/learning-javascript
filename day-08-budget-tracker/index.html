@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker | Day 08</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Budget Tracker</h1>
+            <p>Track your income and expenses</p>
+        </header>
+
+        <section class="balance-section">
+            <div class="balance-card">
+                <h2>Current Balance</h2>
+                <p class="balance-amount" id="balance">$0.00</p>
+            </div>
+            <div class="summary">
+                <div class="summary-item income">
+                    <span>Income</span>
+                    <p id="total-income">$0.00</p>
+                </div>
+                <div class="summary-item expense">
+                    <span>Expenses</span>
+                    <p id="total-expenses">$0.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="transactions">
+            <h3>Expenses</h3>
+            <div class="filter-section">
+                <label>Filter by category:</label>
+                <select id="expense-filter" onchange="filterExpenses()">
+                    <option value="all">All Categories</option>
+                </select>
+            </div>
+            <div class="add-form">
+                <input type="text" id="expense-desc" placeholder="Description (e.g., Coffee)">
+                <input type="number" id="expense-amount" placeholder="Amount" step="0.01" min="0">
+                <input type="text" id="expense-category" placeholder="Category (e.g., Food)">
+                <button onclick="addExpense()" class="btn btn-expense">Add Expense</button>
+            </div>
+            <div id="expense-list"></div>
+        </section>
+
+        <section class="transactions">
+            <h3>Income</h3>
+            <div class="add-form">
+                <input type="text" id="income-desc" placeholder="Description (e.g., Salary)">
+                <input type="number" id="income-amount" placeholder="Amount" step="0.01" min="0">
+                <input type="text" id="income-category" placeholder="Category (e.g., Work)">
+                <button onclick="addIncome()" class="btn btn-income">Add Income</button>
+            </div>
+            <div id="income-list"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>Day 08 - Arrays & Loops Concepts</strong></p>
+        <p>✓ Array declaration | ✓ For loops | ✓ Array.push() | ✓ Array.splice() | ✓ Filtering | ✓ Calculating totals</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
