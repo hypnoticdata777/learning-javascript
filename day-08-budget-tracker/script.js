@@ -122,3 +122,50 @@ function calculateBalance() {
     
     return totalIncome - totalExpenses;
 }
+// Function to get unique categories from expenses array using loops
+function getExpenseCategories() {
+    const categories = [];
+    
+    // Loop through expenses to collect unique categories
+    for (let i = 0; i < expenses.length; i++) {
+        const category = expenses[i].category;
+        
+        // Check if category already exists in array
+        let exists = false;
+        for (let j = 0; j < categories.length; j++) {
+            if (categories[j] === category) {
+                exists = true;
+                break;
+            }
+        }
+        
+        // If not exists, add it
+        if (!exists) {
+            categories.push(category);
+        }
+    }
+    
+    return categories;
+}
+
+// Function to populate filter dropdown
+function populateExpenseFilter() {
+    const filter = document.getElementById('expense-filter');
+    const categories = getExpenseCategories();
+    
+    // Clear existing options except "All"
+    filter.innerHTML = '<option value="all">All Categories</option>';
+    
+    // Add category options using loop
+    for (let i = 0; i < categories.length; i++) {
+        const option = document.createElement('option');
+        option.value = categories[i];
+        option.textContent = categories[i];
+        filter.appendChild(option);
+    }
+}
+
+// Function called when filter changes
+function filterExpenses() {
+    displayExpenses();
+}
