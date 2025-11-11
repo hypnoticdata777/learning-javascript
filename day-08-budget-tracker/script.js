@@ -169,3 +169,98 @@ function populateExpenseFilter() {
 function filterExpenses() {
     displayExpenses();
 }
+// Function to add new expense
+function addExpense() {
+    // Get input values
+    const description = document.getElementById('expense-desc').value.trim();
+    const amount = parseFloat(document.getElementById('expense-amount').value);
+    const category = document.getElementById('expense-category').value.trim();
+    
+    // Validate inputs
+    if (!description || !amount || amount <= 0 || !category) {
+        alert('Please fill all fields with valid values!');
+        return;
+    }
+    
+    // Create new expense object
+    const newExpense = {
+        id: expenses.length + 1,
+        description: description,
+        amount: amount,
+        category: category
+    };
+    
+    // Add to expenses array
+    expenses.push(newExpense);
+    
+    // Clear input fields
+    document.getElementById('expense-desc').value = '';
+    document.getElementById('expense-amount').value = '';
+    document.getElementById('expense-category').value = '';
+    
+    // Update UI
+    updateUI();
+    
+    console.log('New expense added:', newExpense);
+}
+
+// Function to add new income
+function addIncome() {
+    // Get input values
+    const description = document.getElementById('income-desc').value.trim();
+    const amount = parseFloat(document.getElementById('income-amount').value);
+    const category = document.getElementById('income-category').value.trim();
+    
+    // Validate inputs
+    if (!description || !amount || amount <= 0 || !category) {
+        alert('Please fill all fields with valid values!');
+        return;
+    }
+    
+    // Create new income object
+    const newIncome = {
+        id: income.length + 1,
+        description: description,
+        amount: amount,
+        category: category
+    };
+    
+    // Add to income array
+    income.push(newIncome);
+    
+    // Clear input fields
+    document.getElementById('income-desc').value = '';
+    document.getElementById('income-amount').value = '';
+    document.getElementById('income-category').value = '';
+    
+    // Update UI
+    updateUI();
+    
+    console.log('New income added:', newIncome);
+}
+
+// Function to delete expense by index
+function deleteExpense(index) {
+    if (confirm('Are you sure you want to delete this expense?')) {
+        // Remove expense from array using splice
+        expenses.splice(index, 1);
+        
+        // Update UI
+        updateUI();
+        
+        console.log('Expense deleted at index:', index);
+    }
+}
+
+// Function to delete income by index
+function deleteIncome(index) {
+    if (confirm('Are you sure you want to delete this income?')) {
+        // Remove income from array using splice
+        income.splice(index, 1);
+        
+        // Update UI
+        updateUI();
+        
+        console.log('Income deleted at index:', index);
+    }
+}
