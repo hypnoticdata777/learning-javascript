@@ -27,6 +27,7 @@ Each project folder contains:
 | 5 | Nov 4, 2025 | **Multiplication Table Generator** | Loops, dynamic HTML generation, table rendering, input validation | ✅ Completed |
 | 6 | Nov 5, 2025 | **Smart To-Do List** | Arrays, objects, loops, filtering, event delegation, state management | ✅ Completed |
 | 7 | Nov 7, 2025 | **Random Quote Generator** | Arrays of objects, Math.random(), do-while loops, animations, duplicate prevention | ✅ Completed |
+| 8 | Nov 10, 2025 | **Budget Tracker Mini** | Arrays, loops (for), array methods (push, splice), filtering, nested loops, calculations | ✅ Completed |
 
 ---
 
@@ -132,6 +133,23 @@ This project leveled up my understanding of data structures. Working with arrays
 This project solidified my understanding of working with arrays and randomization. The do-while loop for preventing duplicates taught me how to add intelligent constraints to random behavior. Combining JavaScript class manipulation with CSS animations showed me how to create smooth, polished UI transitions. Most importantly, this reinforced that good UX isn't just about functionality—it's about the small details like not showing the same quote twice in a row.
 
 ---
+---
+
+### Project 08 – Budget Tracker Mini
+
+**Date:** Nov 10, 2025  
+**Concepts:** Arrays, for loops, array manipulation (push, splice), filtering, nested loops, calculations, dynamic rendering.  
+**Highlights:**
+- Dual array system for tracking income and expenses separately.
+- For loops for displaying, calculating totals, and filtering transactions.
+- Dynamic category filtering with nested loops to find unique categories.
+- Add/delete functionality using array.push() and array.splice().
+- Real-time balance calculation (income - expenses) with color-coded feedback.
+- Confirmation dialogs before deletion and input validation.
+- Empty state messages and smooth UI transitions.
+
+**Reflection:**  
+This project was all about mastering arrays and loops in a real-world scenario. Working with two separate arrays (income and expenses) taught me how to manage related but distinct data sets. The nested loops for extracting unique categories showed me how loops can solve more complex problems than just iteration. Using array methods like push() and splice() reinforced how JavaScript provides built-in tools for data manipulation. Most importantly, this project proved that loops aren't just for counting—they're the backbone of processing, filtering, and displaying dynamic data in applications.
 
 ## Skills Reinforced
 
@@ -150,3 +168,9 @@ This project solidified my understanding of working with arrays and randomizatio
 - **Random number generation & array indexing**
 - **Duplicate prevention logic**
 - **CSS animations triggered via JavaScript**
+- **For loop mastery (initialization, condition, increment)**
+- **Array methods: push(), splice(), length**
+- **Nested loops for finding unique values**
+- **Filtering arrays with conditional logic**
+- **Accumulator pattern for calculations**
+- **Managing multiple related arrays**
