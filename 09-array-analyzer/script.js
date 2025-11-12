@@ -84,3 +84,51 @@ function displayData() {
     
     container.innerHTML = table;
 }
+// FILTER OPERATIONS
+function applyFilters() {
+    if (transactions.length === 0) {
+        showMessage('No data to filter! Load sample data first.', 'error');
+        return;
+    }
+
+    const category = document.getElementById('categoryFilter').value;
+    const minAmount = parseFloat(document.getElementById('minAmount').value) || 0;
+    const maxAmount = parseFloat(document.getElementById('maxAmount').value) || Infinity;
+
+    // Using filter() method
+    let filtered = transactions.filter(transaction => {
+        const matchesCategory = category === 'all' || transaction.category === category;
+        const matchesAmount = transaction.amount >= minAmount && transaction.amount <= maxAmount;
+        return matchesCategory && matchesAmount;
+    });
+
+    displayFilterResults(filtered);
+    
+    console.log('Filter operation:', {
+        original: transactions.length,
+        filtered: filtered.length,
+        criteria: { category, minAmount, maxAmount }
+    });
+}
+
+function displayFilterResults(filtered) {
+    const container = document.getElementById('filterResults');
+    
+    if (filtered.length === 0) {
+        container.innerHTML = '<p style="color: #999;">No transactions match your filters.</p>';
+        return;
+    }
+
+    const html = `
+        <h4>Found ${filtered.length} transaction(s):</h4>
+        <ul style="list-style: none; padding: 0;">
+            ${filtered.map(t => `
+                <li style="padding: 8px; border-bottom: 1px solid #ddd;">
+                    <strong>${t.product}</strong> - $${t.amount} (${t.category})
+                </li>
+            `).join('')}
+        </ul>
+    `;
+    
+    container.innerHTML = html;
+}
