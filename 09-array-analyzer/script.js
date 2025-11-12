@@ -376,3 +376,22 @@ function showTopCategories() {
 
     console.log('Combined operation - Top categories:', topCategories);
 }
+// UTILITY FUNCTIONS
+function clearAllResults() {
+    document.getElementById('filterResults').innerHTML = '';
+    document.getElementById('mapResults').innerHTML = '';
+    document.getElementById('combinedResults').innerHTML = '';
+    document.getElementById('categoryBreakdown').innerHTML = '';
+}
+
+function resetStats() {
+    document.getElementById('totalSales').textContent = '$0';
+    document.getElementById('avgTransaction').textContent = '$0';
+    document.getElementById('transactionCount').textContent = '0';
+    document.getElementById('highestPurchase').textContent = '$0';
+}
+
+function showMessage(message, type) {
+    console.log(`[${type.toUpperCase()}]`, message);
+    // You can add toast notifications here if you want
+}
