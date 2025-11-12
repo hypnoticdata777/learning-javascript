@@ -223,3 +223,61 @@ function formatDates() {
 
     console.log('Map operation - Formatted dates:', formattedDates);
 }
+// REDUCE OPERATIONS
+function calculateStatistics() {
+    if (transactions.length === 0) {
+        showMessage('No data to analyze! Load sample data first.', 'error');
+        return;
+    }
+
+    // Using reduce() for total sales
+    const totalSales = transactions.reduce((sum, transaction) => sum + transaction.amount, 0);
+
+    // Using reduce() for average
+    const avgTransaction = totalSales / transactions.length;
+
+    // Using reduce() for highest purchase
+    const highestPurchase = transactions.reduce((max, transaction) => 
+        transaction.amount > max ? transaction.amount : max, 0
+    );
+
+    // Using reduce() to count by category
+    const categoryTotals = transactions.reduce((acc, transaction) => {
+        if (!acc[transaction.category]) {
+            acc[transaction.category] = 0;
+        }
+        acc[transaction.category] += transaction.amount;
+        return acc;
+    }, {});
+
+    // Update UI
+    document.getElementById('totalSales').textContent = `$${totalSales.toFixed(2)}`;
+    document.getElementById('avgTransaction').textContent = `$${avgTransaction.toFixed(2)}`;
+    document.getElementById('transactionCount').textContent = transactions.length;
+    document.getElementById('highestPurchase').textContent = `$${highestPurchase.toFixed(2)}`;
+
+    displayCategoryBreakdown(categoryTotals);
+
+    console.log('Reduce operations:', {
+        totalSales,
+        avgTransaction,
+        highestPurchase,
+        categoryTotals
+    });
+}
+
+function displayCategoryBreakdown(categoryTotals) {
+    const container = document.getElementById('categoryBreakdown');
+    
+    const html = `
+        <h4>Sales by Category:</h4>
+        ${Object.entries(categoryTotals).map(([category, total]) => `
+            <div class="category-item">
+                <span><strong>${category}</strong></span>
+                <span>$${total.toFixed(2)}</span>
+            </div>
+        `).join('')}
+    `;
+    
+    container.innerHTML = html;
+}
