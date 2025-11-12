@@ -281,3 +281,98 @@ function displayCategoryBreakdown(categoryTotals) {
     
     container.innerHTML = html;
 }
+// COMBINED OPERATIONS (Chaining methods)
+function calculateElectronicsTotal() {
+    if (transactions.length === 0) {
+        showMessage('No data to analyze! Load sample data first.', 'error');
+        return;
+    }
+
+    // Filter electronics, then reduce to get total
+    const electronicsTotal = transactions
+        .filter(t => t.category === 'Electronics')
+        .reduce((sum, t) => sum + t.amount, 0);
+
+    const electronicsCount = transactions.filter(t => t.category === 'Electronics').length;
+
+    const container = document.getElementById('combinedResults');
+    container.innerHTML = `
+        <div style="padding: 15px; background: #4CAF50; color: white; border-radius: 8px;">
+            <h4>Electronics Sales Analysis</h4>
+            <p style="font-size: 24px; margin: 10px 0;"><strong>$${electronicsTotal.toFixed(2)}</strong></p>
+            <p>From ${electronicsCount} transaction(s)</p>
+        </div>
+    `;
+
+    console.log('Combined operation - Electronics total:', { electronicsTotal, electronicsCount });
+}
+
+function calculateHighValueAverage() {
+    if (transactions.length === 0) {
+        showMessage('No data to analyze! Load sample data first.', 'error');
+        return;
+    }
+
+    // Filter high-value transactions (>$500), then calculate average
+    const highValueTransactions = transactions.filter(t => t.amount > 500);
+    
+    if (highValueTransactions.length === 0) {
+        const container = document.getElementById('combinedResults');
+        container.innerHTML = '<p style="color: #999;">No transactions over $500 found.</p>';
+        return;
+    }
+
+    const highValueTotal = highValueTransactions.reduce((sum, t) => sum + t.amount, 0);
+    const highValueAvg = highValueTotal / highValueTransactions.length;
+
+    const container = document.getElementById('combinedResults');
+    container.innerHTML = `
+        <div style="padding: 15px; background: #2196F3; color: white; border-radius: 8px;">
+            <h4>High-Value Transactions (>$500)</h4>
+            <p style="font-size: 24px; margin: 10px 0;"><strong>$${highValueAvg.toFixed(2)}</strong></p>
+            <p>Average from ${highValueTransactions.length} transaction(s)</p>
+            <ul style="margin-top: 10px;">
+                ${highValueTransactions.map(t => `<li>${t.product}: $${t.amount}</li>`).join('')}
+            </ul>
+        </div>
+    `;
+
+    console.log('Combined operation - High value average:', { highValueAvg, count: highValueTransactions.length });
+}
+
+function showTopCategories() {
+    if (transactions.length === 0) {
+        showMessage('No data to analyze! Load sample data first.', 'error');
+        return;
+    }
+
+    // Group by category, sum totals, sort, and take top 3
+    const categoryTotals = transactions.reduce((acc, t) => {
+        if (!acc[t.category]) {
+            acc[t.category] = { total: 0, count: 0 };
+        }
+        acc[t.category].total += t.amount;
+        acc[t.category].count += 1;
+        return acc;
+    }, {});
+
+    const topCategories = Object.entries(categoryTotals)
+        .map(([category, data]) => ({ category, ...data }))
+        .sort((a, b) => b.total - a.total)
+        .slice(0, 3);
+
+    const container = document.getElementById('combinedResults');
+    container.innerHTML = `
+        <h4>Top 3 Categories by Sales:</h4>
+        ${topCategories.map((cat, index) => `
+            <div style="padding: 15px; background: ${['#FFD700', '#C0C0C0', '#CD7F32'][index]}; 
+                        border-radius: 8px; margin-bottom: 10px;">
+                <h4 style="margin: 0;">#${index + 1} ${cat.category}</h4>
+                <p style="font-size: 20px; margin: 5px 0;"><strong>$${cat.total.toFixed(2)}</strong></p>
+                <p style="margin: 0;">From ${cat.count} transaction(s)</p>
+            </div>
+        `).join('')}
+    `;
+
+    console.log('Combined operation - Top categories:', topCategories);
+}
