@@ -132,3 +132,94 @@ function displayFilterResults(filtered) {
     
     container.innerHTML = html;
 }
+// MAP OPERATIONS
+function extractNames() {
+    if (transactions.length === 0) {
+        showMessage('No data to map! Load sample data first.', 'error');
+        return;
+    }
+
+    // Using map() to extract just product names
+    const productNames = transactions.map(transaction => transaction.product);
+
+    const container = document.getElementById('mapResults');
+    container.innerHTML = `
+        <h4>Extracted Product Names (${productNames.length}):</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            ${productNames.map(name => `
+                <span style="background: #667eea; color: white; padding: 6px 12px; border-radius: 20px; font-size: 14px;">
+                    ${name}
+                </span>
+            `).join('')}
+        </div>
+    `;
+
+    console.log('Map operation - Product names:', productNames);
+}
+
+function addTaxToAmounts() {
+    if (transactions.length === 0) {
+        showMessage('No data to map! Load sample data first.', 'error');
+        return;
+    }
+
+    // Using map() to transform amounts by adding 10% tax
+    const withTax = transactions.map(transaction => ({
+        ...transaction,
+        originalAmount: transaction.amount,
+        amountWithTax: (transaction.amount * 1.10).toFixed(2),
+        tax: (transaction.amount * 0.10).toFixed(2)
+    }));
+
+    const container = document.getElementById('mapResults');
+    container.innerHTML = `
+        <h4>Amounts with 10% Tax:</h4>
+        <ul style="list-style: none; padding: 0;">
+            ${withTax.map(t => `
+                <li style="padding: 8px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between;">
+                    <span><strong>${t.product}</strong></span>
+                    <span>$${t.originalAmount} + $${t.tax} = <strong>$${t.amountWithTax}</strong></span>
+                </li>
+            `).join('')}
+        </ul>
+    `;
+
+    console.log('Map operation - With tax:', withTax);
+}
+
+function formatDates() {
+    if (transactions.length === 0) {
+        showMessage('No data to map! Load sample data first.', 'error');
+        return;
+    }
+
+    // Using map() to format dates
+    const formattedDates = transactions.map(transaction => {
+        const date = new Date(transaction.date);
+        return {
+            product: transaction.product,
+            originalDate: transaction.date,
+            formattedDate: date.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            })
+        };
+    });
+
+    const container = document.getElementById('mapResults');
+    container.innerHTML = `
+        <h4>Formatted Dates:</h4>
+        <ul style="list-style: none; padding: 0;">
+            ${formattedDates.map(item => `
+                <li style="padding: 8px; border-bottom: 1px solid #ddd;">
+                    <strong>${item.product}</strong><br>
+                    <small style="color: #666;">${item.originalDate} → ${item.formattedDate}</small>
+                </li>
+            `).join('')}
+        </ul>
+    `;
+
+    console.log('Map operation - Formatted dates:', formattedDates);
+}
