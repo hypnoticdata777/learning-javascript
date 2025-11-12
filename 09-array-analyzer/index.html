@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Analyzer Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Array Analyzer Dashboard</h1>
+            <p>Master map(), reduce(), and filter()</p>
+        </header>
+
+        <div class="controls">
+            <button id="loadData" class="btn btn-primary">Load Sample Data</button>
+            <button id="clearData" class="btn btn-secondary">Clear All</button>
+        </div>
+
+        <div class="dashboard">
+            <!-- Filter Section -->
+            <section class="card">
+                <h2>🔍 Filter Operations</h2>
+                <div class="filter-controls">
+                    <div class="form-group">
+                        <label for="categoryFilter">Category:</label>
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Appliances">Appliances</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Food">Food</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="minAmount">Min Amount:</label>
+                        <input type="number" id="minAmount" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="maxAmount">Max Amount:</label>
+                        <input type="number" id="maxAmount" placeholder="10000">
+                    </div>
+                    <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
+                </div>
+                <div id="filterResults" class="results"></div>
+            </section>
+
+            <!-- Map Operations Section -->
+            <section class="card">
+                <h2>🔄 Map Operations</h2>
+                <div class="map-controls">
+                    <button id="mapNames" class="btn">Extract Product Names</button>
+                    <button id="mapWithTax" class="btn">Add 10% Tax</button>
+                    <button id="mapDates" class="btn">Format Dates</button>
+                </div>
+                <div id="mapResults" class="results"></div>
+            </section>
+
+            <!-- Reduce Operations Section -->
+            <section class="card">
+                <h2>📊 Reduce Operations</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Sales</h3>
+                        <p id="totalSales" class="stat-value">$0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Average Transaction</h3>
+                        <p id="avgTransaction" class="stat-value">$0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Transaction Count</h3>
+                        <p id="transactionCount" class="stat-value">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Highest Purchase</h3>
+                        <p id="highestPurchase" class="stat-value">$0</p>
+                    </div>
+                </div>
+                <button id="calculateStats" class="btn btn-primary">Calculate Statistics</button>
+                <div id="categoryBreakdown"></div>
+            </section>
+
+            <!-- Combined Operations Section -->
+            <section class="card">
+                <h2>⚡ Combined Operations</h2>
+                <div class="combined-controls">
+                    <button id="electronicsTotal" class="btn">Total Electronics Sales</button>
+                    <button id="highValueAvg" class="btn">Avg of High-Value (>$500)</button>
+                    <button id="topCategories" class="btn">Top 3 Categories</button>
+                </div>
+                <div id="combinedResults" class="results"></div>
+            </section>
+
+            <!-- Data Display -->
+            <section class="card">
+                <h2>📋 Current Data</h2>
+                <div id="dataDisplay" class="data-table"></div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
